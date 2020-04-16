@@ -1,14 +1,10 @@
 /* eslint-disable import/no-unresolved */
-require('./database');
+const config = require('../config/config');
+const database = require('./database');
+const app = require('../config/express');
 
-const express = require('express');
+//criar configuração logger
 
-const routes = require('./routes');
-
-const app = express();
-app.use(express.json());
-app.use(routes);
-
-app.listen(3003,()=>{
-  console.log('Servidor está rodando na porta 3003 >> ');
+app.listen(config.port, () => {
+    console.log('Servidor está rodando na porta ' + config.port + ' >> ');
 });

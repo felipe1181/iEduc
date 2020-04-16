@@ -1,12 +1,12 @@
 // eslint-disable-next-line import/no-unresolved
-require('dotenv').config();
+const config = require('./config');
 
 module.exports = {
     "dialect": "postgres",
-    "database": process.env.POSTGRES_DATABASE,
-    "username": process.env.POSTGRES_USERNAME,
-    "password": process.env.POSTGRES_PASSWORD,
-    "host": process.env.POSTGRES_HOST,
+    "database": config.postgres.db,
+    "username": config.postgres.user,
+    "password": config.postgres.passwd,
+    "host": config.postgres.host,
     "pool": {
         max: 5,
         min: 0,
