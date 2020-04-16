@@ -1,8 +1,9 @@
+/* eslint-disable import/no-unresolved */
 const express = require('express');
+const UserController = require('./controllers/UserController');
+
 const routes = express.Router();
 
-routes.post("",(req,res)=>{
-    
-});
+routes.post('/users', UserController.store);
 
 module.exports = routes;
