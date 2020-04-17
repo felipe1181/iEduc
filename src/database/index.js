@@ -9,6 +9,7 @@ const connection = new Sequelize(dbConfig);
 //PUXA MODELS E AGREGA OBJETOS NUMA LISTA
 consign()
     .include('src/models')
+    .then('src/controllers')
     .into(models);
 
 console.log(models.src.models);
