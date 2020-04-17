@@ -5,7 +5,7 @@ const dbConfig = require('../../config/database');
 const models = require('../models/');
 const connection = new Sequelize(dbConfig);
 
-//PUXA MODELS
+//GET MODELS REQUIRE DIRECTORY
 models.Users.init(connection);
 
 module.exports = connection;
