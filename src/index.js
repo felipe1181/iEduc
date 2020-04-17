@@ -1,6 +1,6 @@
 /* eslint-disable import/no-unresolved */
 const config = require('../config/config');
-const database = require('./database');
+const database = require('./infra/database');
 const app = require('../config/express');
 
 //criar configuração logger
