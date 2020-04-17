@@ -2,24 +2,18 @@
 const Sequelize = require('sequelize');
 const path = require('path');
 const dbConfig = require('../../config/database');
-
-var consign = require('consign'), app = {};
-//const User = require('../models/Users');
+const consign = require('consign'), models = [];
 
 const connection = new Sequelize(dbConfig);
 
-//User.init(connection);
-
-const modelsDir = path.resolve(__dirname, '../', 'models');
-
+//PUXA MODELS E AGREGA OBJETOS NUMA LISTA
 consign()
     .include('src/models')
-    .into(app);
-console.log("models: " + modelsDir);
-console.log(app);
-//models.User.init(connection);
-connection.define(app.src.models); (app);
-//app.Users.init(connection);
+    .into(models);
+
+console.log(models.src.models);
+models.src.models.Users.init(connection);
+
 //SINCRONIZAR MUDANÇAS DOS MODELS
 connection
     .sync()
