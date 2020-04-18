@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-class Students extends Model {
+class Student extends Model {
     static init(sequelize) {
         super.init({
             name: DataTypes.STRING,
@@ -11,7 +11,7 @@ class Students extends Model {
     }
 
     static associate(models) {
-        this.belongsTo(models.User, { foreignKey: 'user_id', as: 'user' });
+        this.belongsTo(models.User, { foreignKey: 'id', as: 'user' });
     }
 }
-module.exports = Students;
+module.exports = Student;

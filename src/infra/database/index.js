@@ -10,14 +10,13 @@ const models = [];
 //GET MODELS REQUIRE DIRECTORY
 models
     .push(
+        ModelsLoader.Students,
         ModelsLoader.Users,
-        ModelsLoader.Students
     );
 
 models
-    .map(model => {
-        model.init(connection);
-        model.associate && model.associate(connection.models);
-    });
+    .map(model => model.init(connection));
+models
+    .map(model => model.associate && model.associate(connection.models));
 
 module.exports = connection;
