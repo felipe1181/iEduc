@@ -2,6 +2,7 @@
 const Sequelize = require('sequelize');
 const dbConfig = require('../../../config/database');
 const requireDirectory = require('../sequelize');
+
 const ModelsLoader = requireDirectory.ModelsLoader;
 const connection = new Sequelize(dbConfig);
 const models = [];
