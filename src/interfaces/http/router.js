@@ -13,8 +13,6 @@ const router = Router();
    *
    * The `controllerPath` is relative to the `interfaces/http` folder
    */
-console.log("aiiiiiiiiiiiii");
-console.log(controllersRoutes);
 router.use('/users', controllersRoutes.user.UserControllerRouter.modules);
 
 
